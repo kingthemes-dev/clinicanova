@@ -4,9 +4,14 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+/**
+ * Na Vercel (VERCEL=1) nie ustawiamy outputFileTracingRoot — stabilniejszy deploy.
+ * Lokalnie: przy drugim package-lock wyżej w drzewie katalogów wymuszamy root projektu.
+ */
 const nextConfig: NextConfig = {
-  /** Wymusza katalog projektu przy wielu lockfile (np. w folderze nadrzędnym) — stabilny build na Vercel. */
-  outputFileTracingRoot: path.join(__dirname),
+  ...(!process.env.VERCEL && {
+    outputFileTracingRoot: path.join(__dirname),
+  }),
   images: {
     remotePatterns: [
       {
