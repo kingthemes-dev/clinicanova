@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SubpageMainSection } from "@/components/layout/SubpageMainSection";
 import { KonsultacjaMedycynyEstetycznejArticle } from "@/components/sections/KonsultacjaMedycynyEstetycznejArticle";
+import { MedycynaEstetycznaSubpageCta } from "@/components/sections/MedycynaEstetycznaSubpageCta";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import {
@@ -63,6 +64,8 @@ export default function KonsultacjaMedycynyEstetycznejPage() {
           </div>
           <KonsultacjaMedycynyEstetycznejArticle />
         </SubpageMainSection>
+
+        <MedycynaEstetycznaSubpageCta headingId="konsultacja-cta-heading" />
       </main>
       <Footer />
     </>

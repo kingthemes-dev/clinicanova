@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { MedycynaEstetycznaSubpageCta } from "@/components/sections/MedycynaEstetycznaSubpageCta";
 import { MedycynaEstetycznaTiles } from "@/components/sections/MedycynaEstetycznaTiles";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
@@ -56,6 +57,8 @@ export default function MedycynaEstetycznaPage() {
         <MedycynaEstetycznaTiles
           breadcrumbs={<Breadcrumbs items={[...MEDYCYNA_BREADCRUMBS]} />}
         />
+
+        <MedycynaEstetycznaSubpageCta headingId="medycyna-estetyczna-cta-heading" />
       </main>
       <Footer />
     </>

@@ -10,15 +10,33 @@ const SERVICES: { label: string; href: string }[] = [
     href: "/medycyna-estetyczna/konsultacja",
   },
   { label: "Mezoterapia", href: "/medycyna-estetyczna/mezoterapia" },
-  { label: "Stymulatory tkankowe", href: "/#kontakt" },
-  { label: "Osocze bogatopłytkowe", href: "/#kontakt" },
-  { label: "Toksyna botulinowa", href: "/#kontakt" },
-  { label: "Lipoza iniekcyjna", href: "/#kontakt" },
-  { label: "Hialuronidaza", href: "/#kontakt" },
-  { label: "Nici Aptos lifting twarzy bez skalpela", href: "/#kontakt" },
-  { label: "Kwas hialuronowy", href: "/#kontakt" },
-  { label: "Powiększanie ust", href: "/#kontakt" },
-  { label: "Niechirurgiczna korekcja nosa", href: "/#kontakt" },
+  {
+    label: "Stymulatory tkankowe",
+    href: "/medycyna-estetyczna/stymulatory-tkankowe",
+  },
+  {
+    label: "Osocze bogatopłytkowe",
+    href: "/medycyna-estetyczna/osocze-bogatoplytkowe",
+  },
+  {
+    label: "Toksyna botulinowa",
+    href: "/medycyna-estetyczna/toksyna-botulinowa",
+  },
+  {
+    label: "Lipoza iniekcyjna",
+    href: "/medycyna-estetyczna/lipoza-iniekcyjna",
+  },
+  { label: "Hialuronidaza", href: "/medycyna-estetyczna/hialuronidaza" },
+  {
+    label: "Nici Aptos lifting twarzy bez skalpela",
+    href: "/medycyna-estetyczna/nici-aptos-lifting-twarzy",
+  },
+  { label: "Kwas hialuronowy", href: "/medycyna-estetyczna/kwas-hialuronowy" },
+  { label: "Powiększanie ust", href: "/medycyna-estetyczna/powiekszanie-ust" },
+  {
+    label: "Niechirurgiczna korekcja nosa",
+    href: "/medycyna-estetyczna/niechirurgiczna-korekcja-nosa",
+  },
 ];
 
 const tileClass =

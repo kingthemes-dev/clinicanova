@@ -4,8 +4,8 @@ import Image from "next/image";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SubpageMainSection } from "@/components/layout/SubpageMainSection";
+import { LipozaIniekcyjnaArticle } from "@/components/sections/LipozaIniekcyjnaArticle";
 import { MedycynaEstetycznaSubpageCta } from "@/components/sections/MedycynaEstetycznaSubpageCta";
-import { MezoterapiaArticle } from "@/components/sections/MezoterapiaArticle";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import {
@@ -15,27 +15,27 @@ import {
   subpageHeroMediaShellClass,
 } from "@/components/ui/subpageLayout";
 
-const MEZOTERAPIA_BREADCRUMBS = [
+const BREADCRUMBS = [
   { label: "Strona główna", href: "/" },
   { label: "Usługi", href: "/uslugi" },
   { label: "Medycyna estetyczna", href: "/medycyna-estetyczna" },
-  { label: "Mezoterapia" },
+  { label: "Lipoza iniekcyjna" },
 ] as const;
 
 export const metadata: Metadata = {
-  title: "Mezoterapia — ClinicaNova Gdańsk",
+  title: "Lipoza iniekcyjna (lipoliza) — ClinicaNova Gdańsk",
   description:
-    "Mezoterapia w ClinicaNova: mikroiniekcje, preparaty nawilżające i biostymulatory. Dla kogo zabieg, efekty i pielęgnacja po wizycie w Gdańsku.",
+    "Lipoliza iniekcyjna w ClinicaNova: redukcja tkanki tłuszczowej, fosfatydylocholina, modelowanie sylwetki. Wskazania, przebieg i pielęgnacja po zabiegu w Gdańsku.",
 };
 
-export default function MezoterapiaPage() {
+export default function LipozaIniekcyjnaPage() {
   return (
     <>
       <Header />
       <main>
         <section
           className="relative w-full overflow-hidden bg-zinc-950"
-          aria-labelledby="mezoterapia-hero-heading"
+          aria-labelledby="lipoza-hero-heading"
         >
           <div className={subpageHeroMediaShellClass}>
             <Image
@@ -49,7 +49,7 @@ export default function MezoterapiaPage() {
             <div className={subpageHeroImageOverlayClass} aria-hidden />
             <Container className={subpageHeroContainerClass}>
               <h1
-                id="mezoterapia-hero-heading"
+                id="lipoza-hero-heading"
                 className="max-w-[20ch] font-serif text-[clamp(1.75rem,4.5vw,3rem)] font-normal leading-[1.15] tracking-tight text-white sm:max-w-none"
               >
                 Medycyna estetyczna
@@ -60,12 +60,12 @@ export default function MezoterapiaPage() {
 
         <SubpageMainSection>
           <div className={subpageBreadcrumbsMarginClass}>
-            <Breadcrumbs items={[...MEZOTERAPIA_BREADCRUMBS]} />
+            <Breadcrumbs items={[...BREADCRUMBS]} />
           </div>
-          <MezoterapiaArticle />
+          <LipozaIniekcyjnaArticle />
         </SubpageMainSection>
 
-        <MedycynaEstetycznaSubpageCta headingId="mezoterapia-cta-heading" />
+        <MedycynaEstetycznaSubpageCta headingId="lipoza-iniekcyjna-cta-heading" />
       </main>
       <Footer />
     </>
