@@ -18,7 +18,7 @@ const NAV = [
       { label: "Leczenie powikłań", href: "/leczenie-powiklan" },
     ],
   },
-  { label: "Zespół", href: "/#zespol" },
+  { label: "Zespół", href: "/zespol" },
   { label: "Cennik", href: "/#cennik" },
   { label: "Kontakt", href: "/#kontakt" },
 ] as const;

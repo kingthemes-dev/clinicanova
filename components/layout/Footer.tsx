@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 
 const FOOTER_NAV_MAIN = [
-  { label: "Zespół", href: "#zespol" },
+  { label: "Zespół", href: "/zespol" },
   { label: "Usługi", href: "/uslugi" },
   { label: "Certyfikaty", href: "#certyfikaty" },
   { label: "Cennik", href: "#cennik" },
