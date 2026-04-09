@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-zinc-50 font-sans text-brand-body antialiased;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  ::selection {
+    @apply bg-zinc-200 text-zinc-900;
+  }
+}

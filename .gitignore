@@ -1,0 +1,9 @@
+/node_modules
+/.next
+/out
+*.log
+.env*.local
+
+.DS_Store
+# Zapisana strona WWW z przeglądarki (nie część projektu)
+*_files/
