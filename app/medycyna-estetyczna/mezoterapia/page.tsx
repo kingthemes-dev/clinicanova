@@ -4,7 +4,10 @@ import Image from "next/image";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { SubpageMainSection } from "@/components/layout/SubpageMainSection";
-import { KonsultacjaMedycynyEstetycznejArticle } from "@/components/sections/KonsultacjaMedycynyEstetycznejArticle";
+import {
+  MezoterapiaArticle,
+  MezoterapiaCtaBand,
+} from "@/components/sections/MezoterapiaArticle";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import {
@@ -14,27 +17,27 @@ import {
   subpageHeroMediaShellClass,
 } from "@/components/ui/subpageLayout";
 
-const KONSULTACJA_BREADCRUMBS = [
+const MEZOTERAPIA_BREADCRUMBS = [
   { label: "Strona główna", href: "/" },
   { label: "Usługi", href: "/uslugi" },
   { label: "Medycyna estetyczna", href: "/medycyna-estetyczna" },
-  { label: "Konsultacja do medycyny estetycznej" },
+  { label: "Mezoterapia" },
 ] as const;
 
 export const metadata: Metadata = {
-  title: "Konsultacja do medycyny estetycznej — ClinicaNova Gdańsk",
+  title: "Mezoterapia — ClinicaNova Gdańsk",
   description:
-    "Pierwsza konsultacja medycyny estetycznej w ClinicaNova: diagnostyka skóry, cele terapeutyczne i harmonogram wizyt. Indywidualne podejście w Gdańsku.",
+    "Mezoterapia w ClinicaNova: mikroiniekcje, preparaty nawilżające i biostymulatory. Dla kogo zabieg, efekty i pielęgnacja po wizycie w Gdańsku.",
 };
 
-export default function KonsultacjaMedycynyEstetycznejPage() {
+export default function MezoterapiaPage() {
   return (
     <>
       <Header />
       <main>
         <section
           className="relative w-full overflow-hidden bg-zinc-950"
-          aria-labelledby="konsultacja-hero-heading"
+          aria-labelledby="mezoterapia-hero-heading"
         >
           <div className={subpageHeroMediaShellClass}>
             <Image
@@ -48,7 +51,7 @@ export default function KonsultacjaMedycynyEstetycznejPage() {
             <div className={subpageHeroImageOverlayClass} aria-hidden />
             <Container className={subpageHeroContainerClass}>
               <h1
-                id="konsultacja-hero-heading"
+                id="mezoterapia-hero-heading"
                 className="max-w-[20ch] font-serif text-[clamp(1.75rem,4.5vw,3rem)] font-normal leading-[1.15] tracking-tight text-white sm:max-w-none"
               >
                 Medycyna estetyczna
@@ -59,10 +62,12 @@ export default function KonsultacjaMedycynyEstetycznejPage() {
 
         <SubpageMainSection>
           <div className={subpageBreadcrumbsMarginClass}>
-            <Breadcrumbs items={[...KONSULTACJA_BREADCRUMBS]} />
+            <Breadcrumbs items={[...MEZOTERAPIA_BREADCRUMBS]} />
           </div>
-          <KonsultacjaMedycynyEstetycznejArticle />
+          <MezoterapiaArticle />
         </SubpageMainSection>
+
+        <MezoterapiaCtaBand />
       </main>
       <Footer />
     </>

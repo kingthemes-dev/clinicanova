@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-import { Container } from "@/components/ui/Container";
+import { SubpageMainSection } from "@/components/layout/SubpageMainSection";
+import { subpageBreadcrumbsMarginClass } from "@/components/ui/subpageLayout";
 import {
   ctaButtonOutlineClass,
   sectionHeadingClass,
@@ -44,20 +45,11 @@ type CategoryGridProps = {
 
 export function CategoryGrid({ showTopCta = true, breadcrumbs }: CategoryGridProps) {
   return (
-    <section
-      id="oferta"
-      className="relative scroll-mt-28 bg-white py-20 sm:py-28 lg:py-32"
-      aria-labelledby="oferta-heading"
-    >
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent"
-        aria-hidden
-      />
-      <Container>
-        {breadcrumbs ? (
-          <div className="mb-10 sm:mb-12">{breadcrumbs}</div>
-        ) : null}
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between sm:gap-10 lg:gap-16">
+    <SubpageMainSection id="oferta" aria-labelledby="oferta-heading">
+      {breadcrumbs ? (
+        <div className={subpageBreadcrumbsMarginClass}>{breadcrumbs}</div>
+      ) : null}
+      <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between sm:gap-10 lg:gap-16">
           <div className="max-w-xl">
             <h2
               id="oferta-heading"
@@ -105,7 +97,6 @@ export function CategoryGrid({ showTopCta = true, breadcrumbs }: CategoryGridPro
             </li>
           ))}
         </ul>
-      </Container>
-    </section>
+    </SubpageMainSection>
   );
 }

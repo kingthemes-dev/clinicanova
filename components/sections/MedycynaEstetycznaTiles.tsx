@@ -1,14 +1,15 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-import { Container } from "@/components/ui/Container";
+import { SubpageMainSection } from "@/components/layout/SubpageMainSection";
+import { subpageBreadcrumbsMarginClass } from "@/components/ui/subpageLayout";
 
 const SERVICES: { label: string; href: string }[] = [
   {
     label: "Konsultacja do medycyny estetycznej",
     href: "/medycyna-estetyczna/konsultacja",
   },
-  { label: "Mezoterapia", href: "/#kontakt" },
+  { label: "Mezoterapia", href: "/medycyna-estetyczna/mezoterapia" },
   { label: "Stymulatory tkankowe", href: "/#kontakt" },
   { label: "Osocze bogatopłytkowe", href: "/#kontakt" },
   { label: "Toksyna botulinowa", href: "/#kontakt" },
@@ -31,28 +32,19 @@ export function MedycynaEstetycznaTiles({
   breadcrumbs,
 }: MedycynaEstetycznaTilesProps) {
   return (
-    <section
-      className="relative bg-white py-20 sm:py-28 lg:py-32"
-      aria-label="Lista zabiegów medycyny estetycznej"
-    >
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent"
-        aria-hidden
-      />
-      <Container>
-        {breadcrumbs ? (
-          <div className="mb-10 sm:mb-12">{breadcrumbs}</div>
-        ) : null}
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
-          {SERVICES.map((item) => (
-            <li key={item.label} className="flex">
-              <Link href={item.href} className={`${tileClass} w-full`}>
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Container>
-    </section>
+    <SubpageMainSection aria-label="Lista zabiegów medycyny estetycznej">
+      {breadcrumbs ? (
+        <div className={subpageBreadcrumbsMarginClass}>{breadcrumbs}</div>
+      ) : null}
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
+        {SERVICES.map((item) => (
+          <li key={item.label} className="flex">
+            <Link href={item.href} className={`${tileClass} w-full`}>
+              {item.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </SubpageMainSection>
   );
 }

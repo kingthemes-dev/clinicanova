@@ -1,4 +1,3 @@
-import { Container } from "@/components/ui/Container";
 import { bodyProseClass } from "@/components/ui/pageTypography";
 
 const h2Class =
@@ -6,13 +5,7 @@ const h2Class =
 
 export function KonsultacjaMedycynyEstetycznejArticle() {
   return (
-    <article className="relative bg-white py-16 sm:py-20 lg:py-24">
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent"
-        aria-hidden
-      />
-      <Container>
-        <div className={`space-y-5 ${bodyProseClass}`}>
+    <div className={`space-y-5 ${bodyProseClass}`}>
           <h2 className={h2Class}>
             Pierwsza konsultacja medycyny estetycznej – dlaczego jest tak ważna?
           </h2>
@@ -86,8 +79,6 @@ export function KonsultacjaMedycynyEstetycznejArticle() {
             łącząc fachową wiedzę, doświadczenie i najnowsze technologie. Pierwsza
             konsultacja jest początkiem wspólnej drogi do zdrowej, pięknej skóry.
           </p>
-        </div>
-      </Container>
-    </article>
+    </div>
   );
 }

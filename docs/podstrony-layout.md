@@ -16,10 +16,15 @@ Przy **każdej nowej podstronie** stosujemy ten sam układ co na stronach wzorco
 - **Nie dodawaj** na tym samym `Container` dodatkowego zwężania w stylu `max-w-3xl`, `max-w-2xl`, `max-w-prose` itd. dla całej podstrony — wtedy układ różni się od np. Usług, siatki zabiegów czy innych podstron wzorcowych.
 - Długie artykuły (np. [`/medycyna-estetyczna/konsultacja`](../app/medycyna-estetyczna/konsultacja/page.tsx)) też używają **tylko** `Container` bez drugiego limitu szerokości.
 
+## Odstępy (globalny rytm)
+
+- Stałe klas Tailwind dla podstron: [`components/ui/subpageLayout.ts`](../components/ui/subpageLayout.ts) — m.in. `subpageHeroMediaShellClass`, `subpageHeroContainerClass`, `subpageMainSectionClass`, `subpageBreadcrumbsMarginClass`.
+- Sekcja biała pod hero (breadcrumbs + treść): komponent [`SubpageMainSection`](../components/layout/SubpageMainSection.tsx) — jeden `py-20 sm:py-28 lg:py-32`, górna kreska, jeden `Container`. **Nie** dziel na osobną wąską sekcję pod breadcrumbs i drugą pod artykuł z innym `py` — to powodowało niespójne odstępy między stronami.
+
 ## Komponenty
 
 - **Breadcrumbs:** [`components/ui/Breadcrumbs.tsx`](../components/ui/Breadcrumbs.tsx) — ostatni element bez `href`, z `aria-current="page"`.
-- **Hero:** na razie definiowany w pliku `page.tsx` danej podstrony (spójne klasy z istniejącymi przykładami); przy wielu podstronach można wydzielić wspólny komponent hero.
+- **Hero:** w `page.tsx` używaj eksportów z `subpageLayout.ts` dla shella zdjęcia, overlay i wewnętrznego kontenera tytułu (jak na `/uslugi`, `/medycyna-estetyczna`, `/medycyna-estetyczna/konsultacja`).
 
 ## Przekazywanie breadcrumbs do sekcji
 
@@ -37,6 +42,6 @@ Przy **każdej nowej podstronie** stosujemy ten sam układ co na stronach wzorco
 - [ ] Hero: zdjęcie z `public/`, alt po polsku
 - [ ] `Breadcrumbs`: `Strona główna` → … → aktualna strona
 - [ ] **Szerokość:** tylko `Container` (bez dodatkowego `max-w-*` zwężającego całą stronę — patrz sekcja wyżej)
-- [ ] Spójne odstępy i typografia z istniejącymi sekcjami (`Container`, klasy jak na wzorcach)
+- [ ] Spójne odstępy: `subpageLayout` + ewentualnie `SubpageMainSection` (patrz sekcja „Odstępy”)
 
 **Referencje w kodzie:** [`app/uslugi/page.tsx`](../app/uslugi/page.tsx), [`app/medycyna-estetyczna/page.tsx`](../app/medycyna-estetyczna/page.tsx), [`app/medycyna-estetyczna/konsultacja/page.tsx`](../app/medycyna-estetyczna/konsultacja/page.tsx).
