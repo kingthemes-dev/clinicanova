@@ -20,7 +20,7 @@ const DeferredSections = dynamic(
   },
 );
 
-export default function MarketingHomePage() {
+export default function HomePage() {
   return (
     <>
       <Header />
