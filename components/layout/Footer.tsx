@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 
 const FOOTER_NAV_MAIN = [
   { label: "Zespół", href: "#zespol" },
-  { label: "Usługi", href: "#oferta" },
+  { label: "Usługi", href: "/uslugi" },
   { label: "Certyfikaty", href: "#certyfikaty" },
   { label: "Cennik", href: "#cennik" },
   { label: "Dobierz swój zabieg", href: "#pierwsza-konsultacja" },

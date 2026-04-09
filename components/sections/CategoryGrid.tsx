@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 import { Container } from "@/components/ui/Container";
 import {
@@ -11,7 +12,7 @@ import {
 const CATEGORIES = [
   {
     title: "Medycyna estetyczna",
-    href: "#kontakt",
+    href: "/medycyna-estetyczna",
     image: "/medycyna-estetyczna.jpg",
     imageAlt: "Medycyna estetyczna — ClinicaNova",
   },
@@ -35,7 +36,13 @@ const CATEGORIES = [
   },
 ] as const;
 
-export function CategoryGrid() {
+type CategoryGridProps = {
+  /** Domyślnie widoczny; na dedykowanej stronie usług ukrywa duplikat CTA. */
+  showTopCta?: boolean;
+  breadcrumbs?: ReactNode;
+};
+
+export function CategoryGrid({ showTopCta = true, breadcrumbs }: CategoryGridProps) {
   return (
     <section
       id="oferta"
@@ -47,6 +54,9 @@ export function CategoryGrid() {
         aria-hidden
       />
       <Container>
+        {breadcrumbs ? (
+          <div className="mb-10 sm:mb-12">{breadcrumbs}</div>
+        ) : null}
         <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between sm:gap-10 lg:gap-16">
           <div className="max-w-xl">
             <h2
@@ -56,12 +66,14 @@ export function CategoryGrid() {
               <span className={sectionHeadingInk}>Usługi</span>
             </h2>
           </div>
-          <Link
-            href="#kontakt"
-            className={`${ctaButtonOutlineClass} shrink-0 self-center sm:self-auto`}
-          >
-            Poznaj wszystkie usługi
-          </Link>
+          {showTopCta ? (
+            <Link
+              href="/uslugi"
+              className={`${ctaButtonOutlineClass} shrink-0 self-center sm:self-auto`}
+            >
+              Poznaj wszystkie usługi
+            </Link>
+          ) : null}
         </div>
 
         <ul className="mt-14 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 sm:gap-7 lg:mt-20 lg:grid-cols-4 lg:gap-6">

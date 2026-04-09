@@ -7,20 +7,15 @@ import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
 
 const NAV = [
-  { label: "O nas", href: "#o-nas" },
+  { label: "O nas", href: "/#o-nas" },
   {
-    label: "Oferta",
-    href: "#oferta",
-    children: [
-      { label: "Medycyna estetyczna", href: "#oferta" },
-      { label: "Kosmetologia", href: "#oferta" },
-      { label: "Laseroterapia", href: "#oferta" },
-      { label: "Leczenie powikłań", href: "#oferta" },
-    ],
+    label: "Usługi",
+    href: "/uslugi",
+    children: [{ label: "Medycyna estetyczna", href: "/medycyna-estetyczna" }],
   },
-  { label: "Zespół", href: "#zespol" },
-  { label: "Cennik", href: "#cennik" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Zespół", href: "/#zespol" },
+  { label: "Cennik", href: "/#cennik" },
+  { label: "Kontakt", href: "/#kontakt" },
 ] as const;
 
 export function Header() {
