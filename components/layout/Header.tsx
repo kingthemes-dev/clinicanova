@@ -11,7 +11,12 @@ const NAV = [
   {
     label: "Usługi",
     href: "/uslugi",
-    children: [{ label: "Medycyna estetyczna", href: "/medycyna-estetyczna" }],
+    children: [
+      { label: "Medycyna estetyczna", href: "/medycyna-estetyczna" },
+      { label: "Kosmetologia", href: "/kosmetologia" },
+      { label: "Laseroterapia", href: "/laseroterapia" },
+      { label: "Leczenie powikłań", href: "/leczenie-powiklan" },
+    ],
   },
   { label: "Zespół", href: "/#zespol" },
   { label: "Cennik", href: "/#cennik" },

@@ -19,20 +19,20 @@ const CATEGORIES = [
   },
   {
     title: "Kosmetologia",
-    href: "#kontakt",
-    image: "/kosmetologia.jpg",
+    href: "/kosmetologia",
+    image: "/kosmetologia1.jpg",
     imageAlt: "Kosmetologia — ClinicaNova",
   },
   {
     title: "Laseroterapia",
-    href: "#kontakt",
-    image: "/laseroterapia.jpg",
+    href: "/laseroterapia",
+    image: "/laseroterapia1.png",
     imageAlt: "Laseroterapia — ClinicaNova",
   },
   {
     title: "Leczenie powikłań",
-    href: "#kontakt",
-    image: "/leczenie-powiklan.jpg",
+    href: "/leczenie-powiklan",
+    image: "/leczenie-powiklan1.jpg",
     imageAlt: "Leczenie powikłań — ClinicaNova",
   },
 ] as const;
