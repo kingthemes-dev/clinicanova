@@ -56,7 +56,7 @@ export function MedycynaEstetycznaSubpageCta({
             Twojej skóry — indywidualnie i bez pośpiechu.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:mt-12">
-            <Link href="/#kontakt" className={ctaPrimaryButtonClass}>
+            <Link href="/kontakt" className={ctaPrimaryButtonClass}>
               Umów konsultację
             </Link>
             <Link

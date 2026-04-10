@@ -1,91 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { IconClock, IconMapPin, IconPhone } from "@/components/icons/contact";
+import { SITE_MAPS_SEARCH_URL } from "@/lib/siteContact";
 import { Container } from "@/components/ui/Container";
 
 const FOOTER_NAV_MAIN = [
   { label: "Zespół", href: "/zespol" },
   { label: "Usługi", href: "/uslugi" },
-  { label: "Certyfikaty", href: "#certyfikaty" },
-  { label: "Cennik", href: "#cennik" },
+  { label: "Certyfikaty", href: "/certyfikaty" },
+  { label: "Cennik", href: "/cennik" },
   { label: "Dobierz swój zabieg", href: "#pierwsza-konsultacja" },
-  { label: "Szkolenia", href: "#szkolenia" },
-  { label: "Vouchery", href: "#vouchery" },
-  { label: "Blog", href: "#blog" },
+  { label: "Szkolenia", href: "/szkolenia" },
+  { label: "Vouchery", href: "/vouchery" },
+  { label: "Blog", href: "/blog" },
 ] as const;
 
 const FOOTER_NAV_META = [
   { label: "Polityka prywatności", href: "#polityka-prywatnosci" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Kontakt", href: "/kontakt" },
 ] as const;
 
-const MAPS_QUERY =
-  "https://www.google.com/maps/search/?api=1&query=" +
-  encodeURIComponent("ul. Obrońców wybrzeża 7/6, 80-398 Gdańsk");
-
 const INSTAGRAM_URL = "https://www.instagram.com/";
-
-function IconMapPin({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.35}
-      aria-hidden
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-      />
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-      />
-    </svg>
-  );
-}
-
-function IconPhone({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.35}
-      aria-hidden
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-      />
-    </svg>
-  );
-}
-
-function IconClock({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.35}
-      aria-hidden
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
-      />
-    </svg>
-  );
-}
 
 function IconInstagram({ className }: { className?: string }) {
   return (
@@ -128,7 +64,7 @@ export function Footer() {
                   Adres
                 </p>
                 <a
-                  href={MAPS_QUERY}
+                  href={SITE_MAPS_SEARCH_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-3 block text-[0.9375rem] font-light leading-relaxed text-zinc-200 transition-colors hover:text-white"
@@ -250,10 +186,7 @@ export function Footer() {
           </Container>
         </div>
 
-        <div
-          id="cennik"
-          className="relative z-10 scroll-mt-28 border-t border-white/[0.06] bg-black/35"
-        >
+        <div className="relative z-10 border-t border-white/[0.06] bg-black/35">
           <Container className="grid gap-5 py-8 sm:gap-6 sm:py-9 lg:grid-cols-3 lg:items-center lg:gap-8">
             <p className="text-center text-[0.6875rem] font-light leading-relaxed tracking-[0.06em] text-zinc-500 lg:text-left">
               © {new Date().getFullYear()} ClinicaNova. Wszelkie prawa

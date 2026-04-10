@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import { CENNIK_HEADER_DROPDOWN } from "@/components/sections/CategoryGrid";
 import { Container } from "@/components/ui/Container";
 
 const NAV = [
@@ -19,8 +20,16 @@ const NAV = [
     ],
   },
   { label: "Zespół", href: "/zespol" },
-  { label: "Cennik", href: "/#cennik" },
-  { label: "Kontakt", href: "/#kontakt" },
+  { label: "Szkolenia", href: "/szkolenia" },
+  {
+    label: "Cennik",
+    href: "/cennik",
+    children: [...CENNIK_HEADER_DROPDOWN],
+  },
+  { label: "Certyfikaty", href: "/certyfikaty" },
+  { label: "Vouchery", href: "/vouchery" },
+  { label: "Blog", href: "/blog" },
+  { label: "Kontakt", href: "/kontakt" },
 ] as const;
 
 export function Header() {
@@ -136,7 +145,9 @@ export function Header() {
       <div
         id="mobile-menu"
         className={`fixed inset-0 z-40 bg-zinc-950/97 px-6 pt-24 backdrop-blur-md transition-opacity duration-300 lg:hidden ${
-          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+          open
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
         }`}
       >
         <nav className="flex flex-col gap-1" aria-label="Menu mobilne">

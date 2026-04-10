@@ -48,7 +48,7 @@ export function ConsultationInviteSection() {
               </p>
             </div>
             <div className="mt-12 sm:mt-14">
-              <Link href="#kontakt" className={ctaButtonClass}>
+              <Link href="/kontakt" className={ctaButtonClass}>
                 Skontaktuj się z nami
               </Link>
             </div>
